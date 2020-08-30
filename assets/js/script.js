@@ -1,9 +1,9 @@
 // get current date to display in header
-var today = moment().format("dddd, MMMM, Do");
-var currentDay = $("#currentDay").text(today);
+var today = moment().format("dddd, MMMM Do");
+$("#todayDate").text(today);
 
 // set color code of the timeblocks based on time presence
-function checkTime() {
+function getTime() {
   // get current moment in hour format
   var currentHour = moment().hour();
 
@@ -42,15 +42,15 @@ function checkTime() {
   });
   
 // set data persistence upon saved event
-$("#time9 .description").val(localStorage.getItem("hour0900"));
-$("#time10 .description").val(localStorage.getItem("hour1000"));
-$("#time11 .description").val(localStorage.getItem("hour1100"));
-$("#time12 .description").val(localStorage.getItem("hour1200"));
-$("#time13 .description").val(localStorage.getItem("hour1300"));
-$("#time14 .description").val(localStorage.getItem("hour1400"));
-$("#time15 .description").val(localStorage.getItem("hour1500"));
-$("#time16 .description").val(localStorage.getItem("hour1600"));
-$("#time17 .description").val(localStorage.getItem("hour1700"));
+$("#hour0900 .description").val(localStorage.getItem("hour0900"));
+$("#hour1000 .description").val(localStorage.getItem("hour1000"));
+$("#hour1100 .description").val(localStorage.getItem("hour1100"));
+$("#hour1200 .description").val(localStorage.getItem("hour1200"));
+$("#hour1300 .description").val(localStorage.getItem("hour1300"));
+$("#hour1400 .description").val(localStorage.getItem("hour1400"));
+$("#hour1500 .description").val(localStorage.getItem("hour1500"));
+$("#hour1600 .description").val(localStorage.getItem("hour1600"));
+$("#hour1700 .description").val(localStorage.getItem("hour1700"));
 
 // execute function
-checkTime();
+getTime();
