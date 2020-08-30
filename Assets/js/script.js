@@ -1,30 +1,31 @@
-//Get current day and display it in the header
+// get current date to display in header
 var today = moment().format("dddd, MMMM, Do");
 var currentDay = $("#currentDay").text(today);
 
-//color code the blocks to according to time of day
+// set color code of the timeblocks based on time presence
 function checkTime() {
-  //get current time in hours
+  // get current moment in hour format
   var currentHour = moment().hour();
 
-  //checking each time block
+  // perform function in each timeblock
   $(".time-block").each(function () {
-    //grabbing time string and converting it to a number to compare against current time
+    // get and convert time to numeric value and compare against current time
     var hour = parseInt($(this).attr("id").split("time")[1]);
 
-      //check if we've moved past this timeblock
+      // check current time's presence versus the timeblock's presence
+      // moved past this timeblock?
       if (hour < currentHour) {
           $(this).addClass("past");
           $(this).removeClass("future");
           $(this).removeClass("present");
       }
-      //if we are in this timeblock
+      // current timeblock?
       else if (hour === currentHour) {
           $(this).removeClass("past");
           $(this).addClass("present");
           $(this).removeClass("future");
       }
-      //if we have not yet reached this timeblock
+      // future timeblock?
       else {
           $(this).removeClass("present");
           $(this).removeClass("past");
@@ -32,7 +33,7 @@ function checkTime() {
       }
   });
 };
-  //saving event to localStorage when save button click
+  // save to localStorage with saveBtn
   $(".saveBtn").on("click", function () {
     var id = $(this).parent().attr("id");
     var text = $(this).siblings(".description").val();
@@ -40,15 +41,16 @@ function checkTime() {
     localStorage.setItem(id, text);
   });
   
-//Each time block will have it's event persist if there is an event saved
-$("#time9 .description").val(localStorage.getItem("time9"));
-$("#time10 .description").val(localStorage.getItem("time10"));
-$("#time11 .description").val(localStorage.getItem("time11"));
-$("#time12 .description").val(localStorage.getItem("time12"));
-$("#time13 .description").val(localStorage.getItem("time13"));
-$("#time14 .description").val(localStorage.getItem("time14"));
-$("#time15 .description").val(localStorage.getItem("time15"));
-$("#time16 .description").val(localStorage.getItem("time16"));
-$("#time17 .description").val(localStorage.getItem("time17"));
+// set data persistence upon saved event
+$("#time9 .description").val(localStorage.getItem("hour0900"));
+$("#time10 .description").val(localStorage.getItem("hour1000"));
+$("#time11 .description").val(localStorage.getItem("hour1100"));
+$("#time12 .description").val(localStorage.getItem("hour1200"));
+$("#time13 .description").val(localStorage.getItem("hour1300"));
+$("#time14 .description").val(localStorage.getItem("hour1400"));
+$("#time15 .description").val(localStorage.getItem("hour1500"));
+$("#time16 .description").val(localStorage.getItem("hour1600"));
+$("#time17 .description").val(localStorage.getItem("hour1700"));
 
+// execute function
 checkTime();
