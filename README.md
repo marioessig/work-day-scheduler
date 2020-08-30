@@ -34,6 +34,6 @@ Create an application that users can save events for each hour of the day.
 ![Website Screenshot]("")
 
 ### Links:
-[Deployed Application URL]("")
+[Deployed Application URL](https://marioessig.github.io/work-day-scheduler/)
 
-[GitHub Repository URL]("")# work-day-scheduler
+[GitHub Repository URL](https://github.com/marioessig/work-day-scheduler)
