@@ -1,26 +1,36 @@
 // get current date to display in header
-var today = moment().format("dddd, MMMM Do");
+var today = moment().format('dddd Do, MMMM, YYYY');
 $("#todayDate").text(today);
+
+// get current hour to display in header
+var nowHour = moment().format('HHMM') + " hours";
+$("#todayHour").text(nowHour);
+
 
 // set color code of the timeblocks based on time presence
 function getTime() {
   // get current moment in hour format
-  var currentHour = moment().hour();
+  var getHour = moment().hour();
+  // confirm getHour is working
+  console.log("getHour is " + getHour);
 
   // perform function in each timeblock
   $(".time-block").each(function () {
     // get and convert time to numeric value and compare against current time
-    var hour = parseInt($(this).attr("id").split("time")[1]);
+    var hour = parseInt($(this).attr("id"));
+
+    // confirm hour variable is working
+    console.log("hour is " + hour);
 
       // check current time's presence versus the timeblock's presence
       // moved past this timeblock?
-      if (hour < currentHour) {
+      if (hour < getHour) {
           $(this).addClass("past");
           $(this).removeClass("future");
           $(this).removeClass("present");
       }
       // current timeblock?
-      else if (hour === currentHour) {
+      else if (hour === getHour) {
           $(this).removeClass("past");
           $(this).addClass("present");
           $(this).removeClass("future");
@@ -42,15 +52,15 @@ function getTime() {
   });
   
 // set data persistence upon saved event
-$("#hour0900 .description").val(localStorage.getItem("hour0900"));
-$("#hour1000 .description").val(localStorage.getItem("hour1000"));
-$("#hour1100 .description").val(localStorage.getItem("hour1100"));
-$("#hour1200 .description").val(localStorage.getItem("hour1200"));
-$("#hour1300 .description").val(localStorage.getItem("hour1300"));
-$("#hour1400 .description").val(localStorage.getItem("hour1400"));
-$("#hour1500 .description").val(localStorage.getItem("hour1500"));
-$("#hour1600 .description").val(localStorage.getItem("hour1600"));
-$("#hour1700 .description").val(localStorage.getItem("hour1700"));
+$("#09 .description").val(localStorage.getItem("09"));
+$("#10 .description").val(localStorage.getItem("10"));
+$("#11 .description").val(localStorage.getItem("11"));
+$("#12 .description").val(localStorage.getItem("12"));
+$("#13 .description").val(localStorage.getItem("13"));
+$("#21 .description").val(localStorage.getItem("21"));
+$("#22 .description").val(localStorage.getItem("22"));
+$("#23.description").val(localStorage.getItem("23"));
+$("#23 .description").val(localStorage.getItem("23"));
 
 // execute function
 getTime();
