@@ -31,7 +31,7 @@ Create an application that users can save events for each hour of the day.
 >*THEN* the saved events persist <br>
 
 ### Refactored Webpage Screenshot
-![Website Screenshot]("")
+![Website Screenshot](https://github.com/marioessig/work-day-scheduler/blob/master/assets/images/WorkDay_Screenshot.gif)
 
 ### Links:
 [Deployed Application URL](https://marioessig.github.io/work-day-scheduler/)
