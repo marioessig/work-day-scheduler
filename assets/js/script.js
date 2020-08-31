@@ -6,6 +6,9 @@ $("#todayDate").text(today);
 var nowHour = moment().format('HHm') + " hours";
 $("#todayHour").text(nowHour);
 
+// confirm nowHour is working
+console.log(nowHour);
+
 
 // set color code of the timeblocks based on time presence
 function getTime() {
