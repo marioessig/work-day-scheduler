@@ -57,10 +57,10 @@ $("#10 .description").val(localStorage.getItem("10"));
 $("#11 .description").val(localStorage.getItem("11"));
 $("#12 .description").val(localStorage.getItem("12"));
 $("#13 .description").val(localStorage.getItem("13"));
-$("#21 .description").val(localStorage.getItem("21"));
-$("#22 .description").val(localStorage.getItem("22"));
-$("#23.description").val(localStorage.getItem("23"));
-$("#23 .description").val(localStorage.getItem("23"));
+$("#14 .description").val(localStorage.getItem("14"));
+$("#15 .description").val(localStorage.getItem("15"));
+$("#16 .description").val(localStorage.getItem("16"));
+$("#17 .description").val(localStorage.getItem("17"));
 
 // execute function
 getTime();
