@@ -3,7 +3,7 @@ var today = moment().format('dddd Do, MMMM, YYYY');
 $("#todayDate").text(today);
 
 // get current hour to display in header
-var nowHour = moment().format('HHMM') + " hours";
+var nowHour = moment().format('HHm') + " hours";
 $("#todayHour").text(nowHour);
 
 
